@@ -530,6 +530,8 @@ export const updateTask = async (req, res) => {
       runValidators: true,
     }).populate('cat', 'name category');
 
+    console.log(updated,"this is update function");
+
     res.status(200).json({ 
       message: "Task updated successfully", 
       task: updated 
@@ -590,6 +592,9 @@ export const deleteTask = async (req, res) => {
   try {
     const type = req.query.type;
     const { id } = req.params;
+
+    console.log(id,type,"this is for delete");
+    
 
     if (!isValidObjectId(id)) {
       return res.status(400).json({ message: "Invalid task ID format" });

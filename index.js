@@ -66,8 +66,7 @@ app.use("/api/leadType",            LeadTypeRoute);
 app.use("/api/leadSource",          LeadSourceRoute);
 app.use("/api/occupation/types",    OccupationTypeRoute);
 app.use("/api/occupation",      LeadOccupationRoute);
-
-
+app.use("/images", express.static("public/images"));
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
